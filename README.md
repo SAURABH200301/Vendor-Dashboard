@@ -4,9 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 **VendorGuard** is a single-page UI application designed for managing vendor interactions. It features login-based access, role and license management, and clean UI/UX.
 
-### 🔗 Live Demo
-**[Open Application](https://chat-app-49705.web.app/)**
-
 ---
 
 ## 🚀 Key Features
