@@ -1,0 +1,17 @@
+<span
+  class="badge"
+  [ngStyle]="{
+    color: textColor,
+    backgroundColor: backgroundColor,
+    border: '1px solid '
+  }"
+>
+  <span
+    *ngIf="showDot"
+    class="dot"
+    [ngStyle]="{
+      border: '2px solid ' + textColor
+    }"
+  ></span>
+  <span>{{ label }}</span>
+</span>

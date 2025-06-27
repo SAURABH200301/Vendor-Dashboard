@@ -1,0 +1,147 @@
+<p-dialog
+  header="Edit Profile"
+  [modal]="true"
+  [(visible)]="isVisible"
+  [style]="{ width: '50vw', maxWidth: '90vw', height:'100vh' }"
+  contentStyleClass="edit-profile-modal"
+  (onHide)="closeModal()"
+  [dismissableMask]="true"
+>
+  <span class="p-text-secondary block mb-8">Update your information.</span>
+  <form [formGroup]="editForm">
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="id">ID:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="id"
+          type="text"
+          class="form-control"
+          formControlName="id"
+          [disabled]="true"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="first_name">First Name:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="first_name"
+          type="text"
+          class="form-control"
+          formControlName="first_name"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="last_name">Last Name:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="last_name"
+          type="text"
+          class="form-control"
+          formControlName="last_name"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="handle">Handle:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="handle"
+          type="text"
+          class="form-control"
+          formControlName="handle"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="status">Status:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="status"
+          type="text"
+          class="form-control"
+          formControlName="status"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="email">Email:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          formControlName="email"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="role">Role:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="role"
+          type="text"
+          class="form-control"
+          formControlName="role"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-4">
+        <label for="license_used">License Used:</label>
+      </div>
+      <div class="col-md-8">
+        <input
+          id="license_used"
+          type="number"
+          class="form-control"
+          formControlName="license_used"
+        />
+      </div>
+    </div>
+
+    <div class="row align-items-start mb-3">
+      <div class="col-md-4">
+        <label>Teams:</label>
+      </div>
+      <div class="col-md-8 d-flex flex-wrap gap-2">
+        <ng-container *ngFor="let team of editForm.value.teams">
+          <app-badge
+            [label]="team?.value"
+            [textColor]="team?.text_color"
+            [backgroundColor]="team?.background_color"
+          ></app-badge>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+
+  <div class="d-flex justify-content-between gap-2">
+    <button class="btn btn-secondary" severity="secondary" (click)="closeModal()">
+      Cancel
+    </button>
+    <button class="btn btn-secondary" (click)="updateData()">Save</button>
+  </div>
+</p-dialog>

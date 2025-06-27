@@ -1,0 +1,122 @@
+<app-card backgroundColor="white" class="p-3">
+  <div
+    class="w-100 px-4 py-2 d-flex justify-content-between align-items-center border-bottom"
+  >
+    <div class="mx-1 d-flex flex-row align-items-center fw-bolder my-4">
+      <h4 class="mx-1">Team members</h4>
+      <app-badge
+        [label]="teamMembersListLength + ' users'"
+        textColor="#886FCE"
+        backgroundColor="#F8F5FE"
+      ></app-badge>
+    </div>
+    <div><i class="bi bi-three-dots-vertical text-secondary"></i></div>
+  </div>
+  <div>
+    <p-table
+      [value]="tableData"
+      [paginator]="true"
+      [rows]="10"
+      [showFirstLastIcon]="false"
+    >
+      <ng-template pTemplate="header">
+        <tr class="table-header">
+          <th>
+            <p-checkbox
+              [(ngModel)]="allChecked"
+              [binary]="true"
+              (onChange)="toggleAllRows($event)"
+            />
+          </th>
+          <th *ngFor="let col of gridHeaders; trackBy: trackByColumnKey">
+            {{ col.column_name }}
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-row>
+        <tr>
+          <td>
+            <p-checkbox
+              [style]="{ height: '24px', width: '24px' }"
+              [(ngModel)]="row.checked"
+              [binary]="true"
+            />
+          </td>
+          <td *ngFor="let col of gridHeaders; trackBy: trackByColumnKey">
+            <ng-container [ngSwitch]="col.type">
+              <span *ngSwitchCase="'name'">
+                <div class="row">
+                  <div class="col-lg-3">
+                    <p-avatar
+                      image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                      class="mr-2"
+                      size="normal"
+                      shape="circle"
+                      [style]="{ height: '30px' }"
+                    />
+                  </div>
+                  <div class="d-flex flex-column col-lg-8">
+                    <div class="fw-bolder w-100 d-flex justify-evenly">
+                      <span>{{ row?.name?.first_name }}</span
+                      >&nbsp;
+                      <span>{{ row?.name?.last_name }}</span>
+                    </div>
+                    <small>{{ row.name.handle }}</small>
+                  </div>
+                </div>
+              </span>
+
+              <span *ngSwitchCase="'status'">
+                <app-badge
+                  [label]="row[col.column_key] || 'saurabh'"
+                  [showDot]="true"
+                  [textColor]="
+                    row[col.column_key] === 'Customer' ? 'green' : 'grey'
+                  "
+                  [backgroundColor]="
+                    row[col.column_key] === 'Customer' ? '#cefad0' : '#D3D3D3'
+                  "
+                ></app-badge>
+              </span>
+              <span *ngSwitchCase="'text'" class="role">
+                {{ row[col.column_key] }}
+              </span>
+
+              <span *ngSwitchCase="'progress'">
+                <app-progress-bar
+                  [progress]="row[col.column_key]"
+                ></app-progress-bar>
+              </span>
+
+              <span *ngSwitchCase="'tags'" class="teams">
+                <ng-container *ngFor="let tag of row[col.column_key]">
+                  <app-badge
+                    [label]="tag?.value || 'Default Badge'"
+                    [textColor]="tag?.text_color || '#000000'"
+                    [backgroundColor]="tag.background_color || '#ADD8E6'"
+                  ></app-badge>
+                </ng-container>
+              </span>
+            </ng-container>
+          </td>
+          <td>
+            <button class="btn" (click)="onDeleteMember(row.id)">
+              <i class="pi pi-trash" style="font-size: 1rem"></i>
+            </button>
+            <button class="btn" (click)="onEditMember(row)">
+              <i class="pi pi-pencil" style="font-size: 1rem"></i>
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</app-card>
+<app-modal
+  [isVisible]="isModalVisible"
+  [title]="modalTitle"
+  [modalContent]="modalContent"
+  (close)="onCloseModal()"
+></app-modal>

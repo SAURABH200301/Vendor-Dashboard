@@ -1,0 +1,159 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 0 0;
+}
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: row;
+}
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+  background-color: #f9f9f9;
+  color: #6b7280; 
+  font-weight: 600;
+  font-size: 14px;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: middle;
+}
+
+::ng-deep .p-datatable .p-datatable-thead > tr > th:first-child {
+  border-top-left-radius: 0.75rem; 
+  padding-left: 1.25rem;
+  width: 50px;
+}
+
+::ng-deep .p-datatable .p-datatable-thead > tr > th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+::ng-deep .p-datatable .p-datatable-tbody > tr {
+  background-color: #ffffff; 
+  border-bottom: 1px solid #f3f4f6; 
+  transition: background-color 0.2s ease-in-out;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #f9fafb; 
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+  color: #374151;
+  font-size: 14px;
+  padding: 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td:first-child {
+  padding-left: 1.25rem;
+  width: 50px;
+}
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td:last-child {
+  padding-right: 1.25rem;
+}
+
+::ng-deep .p-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 10px; 
+  border: 1.5px solid #d1d5db; 
+  background-color: #fff; 
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+  background-color: #4f46e5; 
+  border-color: #4f46e5;
+}
+
+::ng-deep .p-checkbox .p-checkbox-icon {
+  color: #ffffff; 
+  font-size: 14px;
+}
+
+::ng-deep .p-checkbox-box.p-highlight {
+  background-color: #ffffff !important; 
+  border-color: #4b5563 !important; 
+}
+
+::ng-deep .p-checkbox-icon {
+  color: #4b5563 !important; 
+  font-size: 14px;
+}
+::ng-deep .p-paginator {
+  padding: 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between !important;
+  font-family: 'Inter', sans-serif;
+  gap: 0.5rem;
+}
+
+::ng-deep .p-paginator .p-paginator-page,
+::ng-deep .p-paginator .p-paginator-first,
+::ng-deep .p-paginator .p-paginator-last,
+::ng-deep .p-paginator .p-paginator-prev,
+::ng-deep .p-paginator .p-paginator-next {
+  min-height: 40px;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  border: none;
+  color: #374151;
+  transition: 0.2s ease all;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+::ng-deep .p-paginator .p-paginator-page.p-highlight {
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+::ng-deep .p-paginator .p-paginator-prev::before {
+  content: '← Previous';
+  padding: 0 6px;
+}
+::ng-deep anglelefticon {
+  visibility: hidden !important;
+}
+::ng-deep anglerighticon{
+  visibility: hidden !important;
+}
+::ng-deep .p-paginator .p-paginator-next::before {
+  content: 'Next →';
+  padding: 0 6px;
+}
+
+::ng-deep .p-paginator .p-paginator-page:hover,
+::ng-deep .p-paginator .p-paginator-prev:hover,
+::ng-deep .p-paginator .p-paginator-next:hover {
+  background-color: #e0e7ff; /* subtle indigo hover */
+  color: #1e3a8a;
+}
+
+.role{
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: rgb(128, 128, 128);
+}

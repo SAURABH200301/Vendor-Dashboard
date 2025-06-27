@@ -1,0 +1,121 @@
+.p-dialog-mask {
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.p-dialog {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  color: #1f2937;
+}
+
+.p-dialog .p-dialog-header {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 10px 10px 0 0;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  color: #374151;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.p-dialog label {
+  display: inline-block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.p-dialog input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  outline: none;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.p-dialog input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+.p-dialog .p-dialog-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.p-button {
+  padding: 0.5rem 1.25rem;
+  font-size: 14px;
+  border-radius: 0.5rem;
+}
+
+.p-button.p-button-secondary {
+  background-color: #f3f4f6;
+  border: none;
+  color: #1f2937;
+}
+
+.edit-profile-modal {
+
+  .modal-body {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        label {
+          min-width: 110px;
+          font-weight: 500;
+          color: #555;
+        }
+
+        span {
+          font-size: 1rem;
+          color: #222;
+        }
+        input{
+          color: black;
+        }
+      }
+
+      ng-container,
+      span[style] {
+        display: inline-block;
+        margin-right: 4px;
+        margin-bottom: 2px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.95em;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+}

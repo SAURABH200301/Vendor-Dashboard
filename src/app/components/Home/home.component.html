@@ -1,0 +1,18 @@
+<div class="d-flex vendor-container">
+  <div class="d-flex position-fixed"><app-navbar></app-navbar></div>
+  <div class="w-100 ml6">
+    <app-user-greet></app-user-greet>
+    <div class="d-flex justify-content-between px-2 row">
+      <div class="col-md-8 col-lg-8 col-xl-8">
+        <app-vendor-breakdown></app-vendor-breakdown>
+      </div>
+      <div class="col-md-4 col-lg-4 col-xl-4">
+        <app-vendor-monitor></app-vendor-monitor>
+      </div>
+    </div>
+    <div class="px-2">
+      <app-team-members-list></app-team-members-list>
+    </div>
+  </div>
+</div>
+<app-loader [loaderVisible]="vendorService.isLoaderVisible"></app-loader>
